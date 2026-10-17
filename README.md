@@ -1,4 +1,4 @@
-# PRIN135 Activity: The CSS Box Model
+# PRIN135 Demo 03: CSS
 
 A set of short, focused activities. Each numbered folder covers **one concept** with a live demo and a fill-in-the-TODOs exercise.
 
