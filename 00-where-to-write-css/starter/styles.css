@@ -1,0 +1,80 @@
+/* ===== 00 · Where to Write CSS — EXTERNAL stylesheet (STARTER) =====
+   This file is linked from BOTH index.html and about.html with:
+     <link rel="stylesheet" href="styles.css">
+   Change something here and both pages update.
+   The shared site styles below are done for you. */
+
+/* ---------- Shared site styles ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  background: #f2f2f2;
+  color: #222;
+}
+
+.site-header {
+  padding: 16px 24px;
+  background: #1e3a5f;
+  color: #fff;
+}
+
+.site-header h1 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+}
+
+.site-header nav a {
+  display: inline-block;
+  padding: 6px 14px;
+  margin-right: 6px;
+  background: #2f5d8c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+main {
+  padding: 20px;
+}
+
+.demo {
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.demo h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+code {
+  padding: 0 4px;
+  background: #e8e8e8;
+}
+
+/* ---------- External CSS example ---------- */
+.external-box {
+  /* TODO 4: give the external box
+       padding: 16px;
+       border: 3px solid #2f5d8c;
+       border-radius: 6px;
+       background: #eef4fa;
+       color: #1e3a5f;
+       font-weight: bold;
+     Nothing on the page changes until you also do TODO 3 in index.html. Why? */
+}
+
+/* ---------- Who wins? (lowest priority of the three) ---------- */
+.battle {
+  padding: 16px;
+  font-weight: bold;
+  background: #8cb6c0;              /* blue = external */
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>09 · Display</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>09 · Display</h1>
+  <p class="intro">The <code>display</code> property decides how an element's box behaves in the layout: does it start on a new line, and does it accept <code>width</code> and <code>height</code>?</p>
+
+  <!-- A. inline → block -->
+  <section class="demo">
+    <h2>A. Turning inline into block</h2>
+    <p class="hint">These are <code>&lt;span&gt;</code> elements, which are inline by default.</p>
+    <span class="item make-block">Span 1</span>
+    <span class="item make-block">Span 2</span>
+    <span class="item make-block">Span 3</span>
+  </section>
+
+  <!-- B. block → inline -->
+  <section class="demo">
+    <h2>B. Turning block into inline</h2>
+    <p class="hint">These are <code>&lt;div&gt;</code> elements, which are block by default. Each has <code>width: 200px; height: 60px</code>.</p>
+    <div class="item sized make-inline">Div 1</div>
+    <div class="item sized make-inline">Div 2</div>
+    <div class="item sized make-inline">Div 3</div>
+  </section>
+
+  <!-- C. inline-block -->
+  <section class="demo">
+    <h2>C. The best of both: <code>inline-block</code></h2>
+    <p class="hint">Sits side by side like inline, but respects width, height and vertical padding like block.</p>
+    <nav class="nav">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </section>
+
+  <!-- D. none -->
+  <section class="demo">
+    <h2>D. Removing an element: <code>none</code></h2>
+    <p class="hint">The middle card is still in the HTML, but it no longer exists in the layout.</p>
+    <div class="item card">Card 1</div>
+    <div class="item card hide">Card 2 (secret)</div>
+    <div class="item card">Card 3</div>
+  </section>
+</body>
+</html>

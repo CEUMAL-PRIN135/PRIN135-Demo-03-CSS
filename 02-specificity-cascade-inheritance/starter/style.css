@@ -1,0 +1,137 @@
+/* ===== 02 · Specificity, Cascade & Inheritance — STARTER =====
+   Each TODO tells you what to target and which declarations to use.
+   You write the SELECTOR. Before each refresh, PREDICT what will happen. */
+
+/* ---------- Base (done for you) ---------- */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; background: #f2f2f2; color: #222; }
+h1 { margin-top: 0; color: #1e3a5f; }
+code { background: #e8e8e8; padding: 0 4px; }
+.intro { max-width: 700px; }
+.demo { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+.demo h2 { margin-top: 0; font-size: 1.2rem; }
+.demo h3 { margin: 22px 0 8px; font-size: 1rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.family p { margin: 8px 0; }
+.order-box, .important-box, #target { padding: 12px; font-weight: bold; }
+.score { border-collapse: collapse; margin: 14px 0; font-size: 0.9rem; }
+.score th, .score td { border: 1px solid #ccc; padding: 4px 10px; text-align: center; }
+.calc input { width: 100%; padding: 8px; font: 1rem Consolas, Menlo, monospace; border: 2px solid #2f5d8c; border-radius: 4px; }
+.calc-out { display: flex; gap: 8px; margin: 10px 0; }
+.calc-out span { flex: 1; padding: 8px; background: #eef4fa; border-radius: 4px; font-size: 0.8rem; text-align: center; }
+.calc-out b { display: block; font-size: 1.8rem; color: #1e3a5f; }
+.calc-examples button { margin: 0 4px 6px 0; padding: 4px 8px; font: 0.8rem Consolas, Menlo, monospace; cursor: pointer; }
+.btn { display: inline-block; padding: 8px 16px; margin-right: 6px; color: #fff; text-decoration: none; border-radius: 4px; }
+#nav a { display: inline-block; padding: 6px 12px; margin-right: 4px; text-decoration: none; background: #eee; border-radius: 4px; }
+.panel { padding: 14px; border-radius: 6px; }
+
+/* =========================================================
+   GIVEN RULES — written by a "teammate". DO NOT EDIT these.
+   Your TODOs below have to compete with them.
+   ========================================================= */
+.order-box { background: #8cb6c0; }               /* blue */
+#stubborn { background: #8cb6c0; }                /* blue */
+.sidebar .btn { background: #888; }               /* Puzzle 1 */
+.btn-primary { background: #2f5d8c; }             /* Puzzle 1: loses! */
+#nav a { color: #c0392b; }                        /* Puzzle 2 */
+.active { color: #27ae60; font-weight: bold; }    /* Puzzle 2: colour loses! */
+.panel p { color: #333; }                         /* Puzzle 3 */
+.dark { background: #1e3a5f; color: #fff; }       /* Puzzle 3 */
+
+/* =========================================================
+   A. INHERITANCE
+   ========================================================= */
+
+/* TODO 1 · Inheritance
+   Style the .family parent with the declarations below.
+   Then look at its children: which properties did they inherit, and which didn't?
+   Declarations:
+     padding: 12px;
+     border: 2px solid #2f5d8c;
+     color: #2f5d8c;
+     font-style: italic;
+*/
+
+/* TODO 2 · Inheritance
+   The link inside .family is still blue. Target links inside .family
+   and make them take their parent's colour.
+   Declarations:
+     color: inherit;
+*/
+
+/* TODO 3 · The inherit keyword
+   border isn't inherited. Target .child-box and FORCE it to use its
+   parent's border with the inherit keyword.
+   Declarations:
+     margin-top: 8px;
+     padding: 8px;
+     border: inherit;
+*/
+
+/* =========================================================
+   B. THE CASCADE
+   ========================================================= */
+
+/* TODO 4 · Cascade: source order
+   Write a second rule with EXACTLY the same selector as the given
+   blue .order-box rule. Which colour wins, and why?
+   Declarations:
+     background: #c3d08b;
+*/
+
+/* TODO 5 · Cascade: !important
+   Target the element by its CLASS (.important-box) and make the
+   background win over the ID rule AND the inline style.
+   Declarations:
+     background: #f9cc9d !important;
+*/
+
+/* =========================================================
+   C. SPECIFICITY  (keep these three in this order!)
+   ========================================================= */
+
+/* TODO 6 · Specificity
+   Target the paragraph by its ID. (Keep TODOs 6, 7, 8 in this order!)
+   Declarations:
+     background: #c3d08b;
+*/
+
+/* TODO 7 · Specificity
+   Target the same paragraph with .spec-demo plus BOTH of its classes.
+   Declarations:
+     background: #fddd9b;
+*/
+
+/* TODO 8 · Specificity
+   Target the same paragraph with .spec-demo plus its ELEMENT name.
+   This rule is last in the file. Does it win?
+   Declarations:
+     background: #f1948a;
+*/
+
+/* =========================================================
+   D. DEBUGGING PUZZLES  (no !important allowed)
+   ========================================================= */
+
+/* TODO 9 · Puzzle 1
+   The primary button is grey, not blue. Use the calculator to compare the
+   given .sidebar .btn and .btn-primary rules, then write a selector that wins.
+   No !important.
+   Declarations:
+     background: #2f5d8c;
+*/
+
+/* TODO 10 · Puzzle 2
+   The active link is red, not green. Compare #nav a with .active,
+   then write a selector that wins. No !important.
+   Declarations:
+     color: #27ae60;
+*/
+
+/* TODO 11 · Puzzle 3
+   .dark sets color: white, but the paragraph stays dark. Look at the given
+   .panel p rule. Target the paragraph itself so it uses its parent's colour.
+   No !important.
+   Declarations:
+     color: inherit;
+*/

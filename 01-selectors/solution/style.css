@@ -1,0 +1,184 @@
+/* ===== 01 · Selectors — SOLUTION ===== */
+
+/* ---------- Base (done for you) ---------- */
+* { box-sizing: border-box; }        /* * = universal selector: every element */
+body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; background: #f2f2f2; color: #222; }
+h1 { margin-top: 0; color: #1e3a5f; }
+code { background: #e8e8e8; padding: 0 4px; }
+.intro { max-width: 700px; }
+.demo { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+.demo h2 { margin-top: 0; font-size: 1.2rem; }
+.demo h3 { margin: 22px 0 8px; font-size: 1rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.mini-form input, .field { padding: 6px 8px; margin: 0 6px 6px 0; border: 2px solid #bbb; border-radius: 4px; font-size: 0.9rem; }
+.btn { padding: 8px 16px; margin: 0 6px 6px 0; background: #2f5d8c; color: #fff; border: 0; border-radius: 4px; font-size: 0.9rem; cursor: pointer; }
+.siblings p, .todo p { margin: 4px 0; }
+.siblings h4 { margin: 8px 0; }
+.tags span { display: inline-block; padding: 4px 10px; margin-right: 6px; background: #2f5d8c; color: #fff; border-radius: 12px; font-size: 0.85rem; }
+.todo label { margin-left: 6px; }
+
+/* =========================================================
+   A. BASIC SELECTORS
+   ========================================================= */
+
+/* 1. Element selector: every <h2> on the page */
+h2 {
+  margin-top: 0;
+  padding-bottom: 4px;
+  border-bottom: 3px solid #f5a623;
+  color: #1e3a5f;
+}
+
+/* 2. Class selector: every element with class="highlight" */
+.highlight {
+  padding: 4px 8px;
+  background: #fddd9b;
+}
+
+/* 3. ID selector: the ONE element with id="special" */
+#special {
+  padding: 8px;
+  border: 2px dashed #e74c3c;
+}
+
+/* 4. Attribute selector: inputs whose type is exactly "email" */
+input[type="email"] {
+  border-color: #27ae60;
+  background: #eafaf1;
+}
+
+/* 5. Attribute selector: links whose href STARTS WITH "https" */
+a[href^="https"] {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* 6. Grouping: same rule for every <h3> AND every <h4> */
+h3, h4 {
+  color: #2f5d8c;
+}
+
+/* =========================================================
+   B. COMBINATORS
+   ========================================================= */
+
+/* 7. Descendant (space): ANY <a> inside .menu, however deep */
+.menu a {
+  color: #c0392b;
+}
+
+/* 8. Child (>): only <li> elements DIRECTLY inside .menu */
+.menu > li {
+  padding-left: 8px;
+  margin-bottom: 4px;
+  border-left: 4px solid #2f5d8c;
+}
+
+/* 9. Adjacent sibling (+): the ONE <p> right after .anchor */
+.anchor + p {
+  background: #c3d08b;
+}
+
+/* 10. General sibling (~): EVERY <p> after .anchor (same parent) */
+.anchor ~ p {
+  padding-left: 8px;
+  border-left: 4px solid #27ae60;
+}
+
+/* =========================================================
+   C. PSEUDO-CLASSES  (one colon)
+   ========================================================= */
+
+/* 11. :hover — while the mouse is over it */
+.btn:hover {
+  background: #f5a623;
+  color: #222;
+}
+
+/* 12. :focus — while it's selected for typing */
+.field:focus {
+  outline: 3px solid #f5a623;
+  border-color: #f5a623;
+}
+
+/* 13. :first-child */
+.ranks li:first-child {
+  background: #fddd9b;
+  font-weight: bold;
+}
+
+/* 14. :nth-child(even) — 2nd, 4th, 6th... */
+.ranks li:nth-child(even) {
+  background: #eef4fa;
+}
+
+/* 15. :last-child */
+.ranks li:last-child {
+  color: #999;
+  font-style: italic;
+}
+
+/* 16. :not() — every tag EXCEPT the featured one */
+.tags span:not(.featured) {
+  opacity: 0.45;
+}
+
+/* 17. :checked + combinator — the label right after a ticked checkbox */
+.todo input:checked + label {
+  color: #999;
+  text-decoration: line-through;
+}
+
+/* 18. :disabled */
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   D. PSEUDO-ELEMENTS  (two colons)
+   ========================================================= */
+
+/* 19. ::before — adds content at the start (content is required!) */
+.tip::before {
+  content: "💡 Tip: ";
+  font-weight: bold;
+}
+
+/* 20. ::after — a "NEW" badge with its own padding and border-radius */
+.new::after {
+  content: "NEW";
+  margin-left: 8px;
+  padding: 2px 8px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+/* 21. ::first-letter — a drop cap */
+.story::first-letter {
+  float: left;
+  padding-right: 8px;
+  font-size: 3.2rem;
+  line-height: 1;
+  color: #2f5d8c;
+}
+
+/* 22. ::first-line — only the first rendered line */
+.story::first-line {
+  font-weight: bold;
+}
+
+/* 23. ::selection — text highlighted with the mouse */
+.story::selection {
+  background: #f5a623;
+  color: #222;
+}
+
+/* 24. ::placeholder — the hint text inside an empty input */
+.field::placeholder {
+  color: #2f5d8c;
+  font-style: italic;
+}

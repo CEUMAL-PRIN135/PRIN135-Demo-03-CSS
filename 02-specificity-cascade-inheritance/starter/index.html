@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02 · Specificity, Cascade &amp; Inheritance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>02 · Specificity, Cascade &amp; Inheritance</h1>
+  <p class="intro">When several rules try to style the same element, the browser needs a way to pick a winner. Three ideas decide it: <strong>inheritance</strong>, the <strong>cascade</strong>, and <strong>specificity</strong>.</p>
+
+  <!-- ===== A. Inheritance ===== -->
+  <section class="demo">
+    <h2>A. Inheritance</h2>
+    <p class="hint">Some properties (mostly <strong>text</strong> ones like <code>color</code> and <code>font-style</code>) pass down from parent to children. <strong>Box</strong> properties like <code>border</code> and <code>padding</code> do not.</p>
+
+    <div class="family">
+      <strong>.family (the parent)</strong>
+      <p>A child paragraph. Did it inherit the colour? The italics? The border?</p>
+      <p>A child with a <a href="#">link inside</a>. Links have their own colour from the browser.</p>
+      <div class="child-box">.child-box: a child that borrows its parent's border with <code>inherit</code></div>
+    </div>
+  </section>
+
+  <!-- ===== B. Cascade ===== -->
+  <section class="demo">
+    <h2>B. The cascade: order and <code>!important</code></h2>
+    <p class="hint">When two rules have the <strong>same specificity</strong>, the one that comes <strong>later</strong> in the CSS wins.</p>
+    <p class="order-box">.order-box: styled twice with the same selector. Blue rule first, green rule last.</p>
+
+    <p class="hint"><code>!important</code> jumps the queue. It even beats inline styles, so use it only as a last resort.</p>
+    <p id="stubborn" class="important-box" style="background: #f1948a;">#stubborn.important-box: inline style says red, ID rule says blue, class rule says orange <code>!important</code></p>
+  </section>
+
+  <!-- ===== C. Specificity ===== -->
+  <section class="demo">
+    <h2>C. Specificity</h2>
+    <p class="hint">Different selectors, same element. The <strong>more specific</strong> selector wins, no matter where it is in the file.</p>
+
+    <div class="spec-demo">
+      <p id="target" class="msg note">I'm &lt;p id="target" class="msg note"&gt;. Three rules want to colour me.</p>
+    </div>
+
+    <table class="score">
+      <tr><th>Selector</th><th>IDs</th><th>Classes</th><th>Elements</th><th>Score</th></tr>
+      <tr><td><code>.spec-demo p</code></td><td>0</td><td>1</td><td>1</td><td>0-1-1</td></tr>
+      <tr><td><code>.spec-demo .msg.note</code></td><td>0</td><td>3</td><td>0</td><td>0-3-0</td></tr>
+      <tr><td><code>#target</code></td><td>1</td><td>0</td><td>0</td><td>1-0-0</td></tr>
+      <tr><td><code>style="..."</code></td><td colspan="4">beats all of the above (only <code>!important</code> beats it)</td></tr>
+    </table>
+
+    <h3>Specificity calculator</h3>
+    <p class="hint">Type any selector, or click an example. Compare scores left to right: <code>1-0-0</code> beats <code>0-15-0</code>.</p>
+    <div class="calc">
+      <input type="text" id="calc-input" value=".menu > li a:hover" aria-label="Selector">
+      <div class="calc-out">
+        <span><b id="calc-a">0</b>IDs</span>
+        <span><b id="calc-b">0</b>classes, attributes, pseudo-classes</span>
+        <span><b id="calc-c">0</b>elements, pseudo-elements</span>
+      </div>
+      <p class="calc-examples">
+        <button type="button">p</button>
+        <button type="button">.card p</button>
+        <button type="button">#nav a</button>
+        <button type="button">ul li:first-child</button>
+        <button type="button">a[href^="https"]</button>
+        <button type="button">.btn.btn-primary:hover</button>
+        <button type="button">#main .card &gt; h2::before</button>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== D. Debugging puzzles ===== -->
+  <section class="demo">
+    <h2>D. "Why isn't my style working?"</h2>
+    <p class="hint">Each puzzle has a rule that <em>should</em> work but loses. Fix it <strong>without</strong> <code>!important</code>.</p>
+
+    <h3>Puzzle 1: the primary button should be blue</h3>
+    <div class="sidebar">
+      <a href="#" class="btn">Normal button</a>
+      <a href="#" class="btn btn-primary">Primary button</a>
+    </div>
+
+    <h3>Puzzle 2: the active link should be green</h3>
+    <nav id="nav">
+      <a href="#">Home</a>
+      <a href="#" class="active">About (active)</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <h3>Puzzle 3: the text in the dark panel should be white</h3>
+    <div class="panel dark">
+      <strong>.dark has color: white</strong>
+      <p>But this paragraph is still dark. Why?</p>
+    </div>
+  </section>
+
+  <script src="calc.js"></script>
+</body>
+</html>

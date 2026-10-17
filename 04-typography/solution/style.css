@@ -1,0 +1,137 @@
+/* ===== 04 · Typography — SOLUTION ===== */
+
+/* ---------- Base (done for you) ---------- */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; background: #f2f2f2; color: #222; }
+h1 { margin-top: 0; color: #1e3a5f; }
+code { background: #e8e8e8; padding: 0 4px; }
+.intro { max-width: 700px; }
+.demo { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+.demo h2 { margin-top: 0; font-size: 1.2rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.sample { padding: 12px 14px; margin-bottom: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 1.15rem; }
+.sample > code { display: block; width: fit-content; margin-bottom: 4px; font-size: 0.8rem; }
+.sample p { margin: 6px 0; }
+.font-status { display: inline-block; vertical-align: middle; padding: 2px 8px; border-radius: 10px; font: bold 0.7rem Arial, sans-serif; }
+.font-status.is-ok { background: #d5f5e3; color: #1e6b3d; }
+.font-status.is-missing { background: #fdecea; color: #922b21; }
+.article { max-width: 620px; padding: 20px 24px; border: 1px solid #ddd; border-radius: 6px; }
+.article h3, .article .kicker, .article .byline { margin: 0 0 6px; }
+.pull-quote { margin: 20px 0; padding: 14px; border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; }
+
+/* Done for you: two more web-safe stacks to copy the pattern from */
+.ws-trebuchet { font-family: "Trebuchet MS", sans-serif; }
+.ws-times { font-family: "Times New Roman", Times, serif; }
+
+/* =========================================================
+   A. WEB-SAFE FONTS
+   ========================================================= */
+
+/* 1. */
+.ws-arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 2. */
+.ws-verdana {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+/* 3. */
+.ws-georgia {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/* 4. */
+.ws-courier {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* =========================================================
+   B. GOOGLE FONTS  (the <link> tag is in index.html)
+   ========================================================= */
+
+/* 6. */
+.gf-heading {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* 7. */
+.gf-body {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 300;
+}
+
+/* =========================================================
+   C. UPLOADED FONTS
+   ========================================================= */
+
+/* 8. */
+@font-face {
+  font-family: "Pacifico";
+  src: url("fonts/pacifico-latin-400-normal.woff2") format("woff2"),
+       url("fonts/pacifico-latin-400-normal.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 9. */
+.custom {
+  font-family: "Pacifico", cursive;
+  font-size: 2rem;
+  color: #2f5d8c;
+}
+
+/* =========================================================
+   D. STYLING THE TEXT
+   ========================================================= */
+
+/* 10. */
+.article {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* 11. */
+.article h3 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+/* 12. */
+.kicker {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #c0392b;
+}
+
+/* 13. */
+.byline {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #666;
+}
+
+/* 14. */
+.pull-quote {
+  font-size: 1.4rem;
+  font-style: italic;
+  text-align: center;
+}
+
+/* 15. */
+.article a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #f5a623;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06 · Padding</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>06 · Padding</h1>
+  <p class="intro">Padding is the space <strong>inside</strong> an element, between its content and its border. The background colour fills the padding.</p>
+
+  <!-- A. Buttons -->
+  <section class="demo">
+    <h2>A. Padding makes things clickable</h2>
+    <p class="hint">Same text, same colour. Only the padding is different.</p>
+    <a href="#" class="link-plain">No padding</a>
+    <a href="#" class="btn">With padding</a>
+  </section>
+
+  <!-- B. Shorthand -->
+  <section class="demo">
+    <h2>B. Padding shorthand</h2>
+    <p class="hint">The blue area is padding. The white strip is the content.</p>
+    <div class="pad pad-all"><span>padding: 20px</span></div>
+    <div class="pad pad-two"><span>padding: 10px 50px</span></div>
+    <div class="pad pad-left"><span>padding-left: 80px</span></div>
+  </section>
+
+  <!-- C. box-sizing -->
+  <section class="demo">
+    <h2>C. <code>box-sizing</code> changes the math</h2>
+    <p class="hint">Both boxes have <code>width: 200px; padding: 20px; border: 5px solid</code>. The label shows the real width the browser drew.</p>
+    <div class="size-box content-box">content-box<br><b class="measure"></b></div>
+    <div class="size-box border-box">border-box<br><b class="measure"></b></div>
+  </section>
+
+  <script>
+    // Writes each box's real rendered width into its label
+    document.querySelectorAll('.size-box').forEach(function (box) {
+      box.querySelector('.measure').textContent = box.offsetWidth + 'px wide';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* ===== 13 · Floats — SOLUTION ===== */
+
+/* ---------- Base (done for you) ---------- */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; background: #f2f2f2; color: #222; }
+h1 { margin-top: 0; color: #1e3a5f; }
+code { background: #e8e8e8; padding: 0 4px; }
+.intro { max-width: 700px; }
+.demo { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+.demo h2 { margin-top: 0; font-size: 1.2rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.photo { width: 140px; height: 110px; background: #9bb7d4; color: #fff; font-weight: bold; text-align: center; line-height: 110px; }
+.gallery { border: 3px dashed #e74c3c; padding: 10px; }
+.tile { width: 100px; height: 100px; margin-right: 10px; background: #f5a623; font-weight: bold; text-align: center; line-height: 100px; }
+.col-main, .col-side, .footer { padding: 20px; color: #fff; font-weight: bold; }
+.col-main { height: 140px; background: #2f5d8c; }
+.col-side { height: 90px; background: #27ae60; }
+.footer { background: #1e3a5f; }
+
+/* ---------- A. Text wrap ---------- */
+.photo-left {
+  float: left;
+  margin: 0 15px 10px 0;        /* space on the side facing the text */
+}
+
+.photo-right {
+  float: right;
+  margin: 0 0 10px 15px;
+}
+
+/* ---------- B. Collapsed parent ---------- */
+.tile {
+  float: left;
+}
+
+.clearfix::after {              /* an invisible box after the floats... */
+  content: "";
+  display: block;
+  clear: both;                  /* ...that sits below them, stretching the parent */
+}
+
+/* ---------- C. Columns + clear ---------- */
+.col-main {
+  float: left;
+  width: 65%;
+}
+
+.col-side {
+  float: right;
+  width: 30%;
+}
+
+.footer {
+  clear: both;                  /* drop below every float above */
+}

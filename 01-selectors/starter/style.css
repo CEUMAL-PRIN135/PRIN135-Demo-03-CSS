@@ -1,0 +1,211 @@
+/* ===== 01 · Selectors — STARTER =====
+   Each TODO tells you WHICH elements to target and WHAT to write.
+   Your job: write the SELECTOR yourself, then the declarations.
+   Save and refresh after each one. */
+
+/* ---------- Base (done for you) ---------- */
+* { box-sizing: border-box; }        /* * = universal selector: every element */
+body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; background: #f2f2f2; color: #222; }
+h1 { margin-top: 0; color: #1e3a5f; }
+code { background: #e8e8e8; padding: 0 4px; }
+.intro { max-width: 700px; }
+.demo { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+.demo h2 { margin-top: 0; font-size: 1.2rem; }
+.demo h3 { margin: 22px 0 8px; font-size: 1rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.mini-form input, .field { padding: 6px 8px; margin: 0 6px 6px 0; border: 2px solid #bbb; border-radius: 4px; font-size: 0.9rem; }
+.btn { padding: 8px 16px; margin: 0 6px 6px 0; background: #2f5d8c; color: #fff; border: 0; border-radius: 4px; font-size: 0.9rem; cursor: pointer; }
+.siblings p, .todo p { margin: 4px 0; }
+.siblings h4 { margin: 8px 0; }
+.tags span { display: inline-block; padding: 4px 10px; margin-right: 6px; background: #2f5d8c; color: #fff; border-radius: 12px; font-size: 0.85rem; }
+.todo label { margin-left: 6px; }
+
+/* =========================================================
+   A. BASIC SELECTORS
+   ========================================================= */
+
+/* TODO 1 · Element selector
+   Target EVERY <h2> on the page.
+   Declarations:
+     margin-top: 0;
+     padding-bottom: 4px;
+     border-bottom: 3px solid #f5a623;
+     color: #1e3a5f;
+*/
+
+/* TODO 2 · Class selector
+   Target every element with class="highlight".
+   Declarations:
+     padding: 4px 8px;
+     background: #fddd9b;
+*/
+
+/* TODO 3 · ID selector
+   Target the one element with id="special".
+   Declarations:
+     padding: 8px;
+     border: 2px dashed #e74c3c;
+*/
+
+/* TODO 4 · Attribute selector
+   Target <input> elements whose type is exactly "email".
+   Declarations:
+     border-color: #27ae60;
+     background: #eafaf1;
+*/
+
+/* TODO 5 · Attribute selector
+   Target <a> links whose href STARTS WITH "https". (Hint: ^= means "starts with".)
+   Declarations:
+     color: #27ae60;
+     font-weight: bold;
+*/
+
+/* TODO 6 · Grouping
+   Target every <h3> AND every <h4> with ONE rule.
+   Declarations:
+     color: #2f5d8c;
+*/
+
+/* =========================================================
+   B. COMBINATORS
+   ========================================================= */
+
+/* TODO 7 · Descendant combinator
+   Target EVERY <a> inside .menu, including the nested ones.
+   Declarations:
+     color: #c0392b;
+*/
+
+/* TODO 8 · Child combinator
+   Target only the <li> elements DIRECTLY inside .menu (not the nested ones).
+   Declarations:
+     padding-left: 8px;
+     margin-bottom: 4px;
+     border-left: 4px solid #2f5d8c;
+*/
+
+/* TODO 9 · Adjacent sibling combinator
+   Target only the ONE <p> that comes immediately after .anchor.
+   Declarations:
+     background: #c3d08b;
+*/
+
+/* TODO 10 · General sibling combinator
+   Target EVERY <p> that comes after .anchor (same parent).
+   Declarations:
+     padding-left: 8px;
+     border-left: 4px solid #27ae60;
+*/
+
+/* =========================================================
+   C. PSEUDO-CLASSES  (one colon)
+   ========================================================= */
+
+/* TODO 11 · :hover
+   Style .btn while the mouse is over it.
+   Declarations:
+     background: #f5a623;
+     color: #222;
+*/
+
+/* TODO 12 · :focus
+   Style .field while you're typing in it.
+   Declarations:
+     outline: 3px solid #f5a623;
+     border-color: #f5a623;
+*/
+
+/* TODO 13 · :first-child
+   Target the FIRST <li> in .ranks.
+   Declarations:
+     background: #fddd9b;
+     font-weight: bold;
+*/
+
+/* TODO 14 · :nth-child()
+   Target the EVEN <li> items in .ranks (2nd, 4th, 6th).
+   Declarations:
+     background: #eef4fa;
+*/
+
+/* TODO 15 · :last-child
+   Target the LAST <li> in .ranks.
+   Declarations:
+     color: #999;
+     font-style: italic;
+*/
+
+/* TODO 16 · :not()
+   Target every <span> in .tags EXCEPT the one with class "featured".
+   Declarations:
+     opacity: 0.45;
+*/
+
+/* TODO 17 · :checked + combinator
+   Target the <label> that comes right after a CHECKED checkbox inside .todo.
+   Declarations:
+     color: #999;
+     text-decoration: line-through;
+*/
+
+/* TODO 18 · :disabled
+   Style .btn when it is disabled.
+   Declarations:
+     opacity: 0.4;
+     cursor: not-allowed;
+*/
+
+/* =========================================================
+   D. PSEUDO-ELEMENTS  (two colons)
+   ========================================================= */
+
+/* TODO 19 · ::before
+   Add text BEFORE the content of .tip. (content is required!)
+   Declarations:
+     content: "💡 Tip: ";
+     font-weight: bold;
+*/
+
+/* TODO 20 · ::after
+   Add a "NEW" badge AFTER the content of .new.
+   Declarations:
+     content: "NEW";
+     margin-left: 8px;
+     padding: 2px 8px;
+     background: #e74c3c;
+     color: #fff;
+     font-size: 0.7rem;
+     font-weight: bold;
+     border-radius: 10px;
+*/
+
+/* TODO 21 · ::first-letter
+   Style the first letter of .story as a drop cap.
+   Declarations:
+     float: left;
+     padding-right: 8px;
+     font-size: 3.2rem;
+     line-height: 1;
+     color: #2f5d8c;
+*/
+
+/* TODO 22 · ::first-line
+   Style only the first line of .story.
+   Declarations:
+     font-weight: bold;
+*/
+
+/* TODO 23 · ::selection
+   Style text in .story when it's highlighted with the mouse.
+   Declarations:
+     background: #f5a623;
+     color: #222;
+*/
+
+/* TODO 24 · ::placeholder
+   Style the placeholder text inside .field.
+   Declarations:
+     color: #2f5d8c;
+     font-style: italic;
+*/

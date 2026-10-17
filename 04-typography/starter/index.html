@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>04 · Typography</title>
+
+  <!-- TODO 5 (GOOGLE FONTS): paste the embed code from Google Fonts here,
+       ABOVE the style.css link. You can get it yourself from fonts.google.com
+       (pick "Playfair Display" 400 + 700 and "Roboto" 300, 400 + 700, then "Get embed code"),
+       or copy these three lines:
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap">
+  -->
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>04 · Typography</h1>
+  <p class="intro">Typography is how text looks: which <strong>font</strong> it uses, and how big, bold, spaced and aligned it is. A font can come from three places: the visitor's computer, a font service like Google Fonts, or a file you upload with your site.</p>
+
+  <!-- ===== A. Web-safe fonts ===== -->
+  <section class="demo">
+    <h2>A. Web-safe fonts</h2>
+    <p class="hint">Fonts already installed on almost every computer. Nothing to download, but everyone has seen them before. Always end the list with a <strong>generic family</strong> as a fallback.</p>
+    <div class="sample ws-arial"><code>Arial, Helvetica, sans-serif</code>The quick brown fox jumps over the lazy dog.</div>
+    <div class="sample ws-verdana"><code>Verdana, Geneva, sans-serif</code>The quick brown fox jumps over the lazy dog.</div>
+    <div class="sample ws-georgia"><code>Georgia, "Times New Roman", serif</code>The quick brown fox jumps over the lazy dog.</div>
+    <div class="sample ws-courier"><code>"Courier New", Courier, monospace</code>The quick brown fox jumps over the lazy dog.</div>
+    <div class="sample ws-trebuchet"><code>"Trebuchet MS", sans-serif</code> (done for you) The quick brown fox jumps over the lazy dog.</div>
+    <div class="sample ws-times"><code>"Times New Roman", Times, serif</code> (done for you) The quick brown fox jumps over the lazy dog.</div>
+  </section>
+
+  <!-- ===== B. Google Fonts ===== -->
+  <section class="demo">
+    <h2>B. Google Fonts <span class="font-status" data-font="Playfair Display"></span> <span class="font-status" data-font="Roboto"></span></h2>
+    <p class="hint">Hundreds of free fonts, loaded from Google's servers with a <code>&lt;link&gt;</code> tag. Needs an internet connection: offline, the fallback fonts are used instead.</p>
+    <div class="sample">
+      <p class="gf-heading">Playfair Display for headings</p>
+      <p class="gf-body">Roboto Light for body text. Pairing a decorative serif heading with a clean sans-serif body is a classic combination that keeps long text easy to read.</p>
+    </div>
+  </section>
+
+  <!-- ===== C. Uploaded fonts ===== -->
+  <section class="demo">
+    <h2>C. Uploading your own font <span class="font-status" data-font="Pacifico"></span></h2>
+    <p class="hint">The font file lives in your project's <code>fonts/</code> folder, and <code>@font-face</code> tells the browser where to find it. Works offline, and you control exactly which file is used.</p>
+    <div class="sample">
+      <p class="custom">Pacifico, served from fonts/</p>
+      <p class="hint">File: <code>fonts/pacifico-latin-400-normal.woff2</code> · License: <code>fonts/OFL.txt</code></p>
+    </div>
+  </section>
+
+  <!-- ===== D. Text properties ===== -->
+  <section class="demo">
+    <h2>D. Styling the text</h2>
+    <p class="hint">Once you've picked a font, these properties control how it's set.</p>
+    <article class="article">
+      <p class="kicker">Web design</p>
+      <h3>Good typography is invisible</h3>
+      <p class="byline">By a PRIN135 student · 3 min read</p>
+      <p>Readers rarely notice good typography; they just find the page easy to read. A comfortable <a href="#">font size</a>, generous line height and a line length of about 60–75 characters do most of the work.</p>
+      <blockquote class="pull-quote">"Type is a beautiful group of letters, not a group of beautiful letters."</blockquote>
+      <p>Small details matter too: spacing out uppercase labels, keeping body text left-aligned, and using bold and italics sparingly so that they still stand out.</p>
+    </article>
+  </section>
+
+  <script src="font-check.js"></script>
+</body>
+</html>

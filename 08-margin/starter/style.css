@@ -1,0 +1,49 @@
+/* ===== 08 · Margin — STARTER =====
+   Complete each TODO, then save and refresh the browser. */
+
+/* ---------- Base (done for you) ---------- */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; background: #f2f2f2; color: #222; }
+h1 { margin-top: 0; color: #1e3a5f; }
+code { background: #e8e8e8; padding: 0 4px; }
+.intro { max-width: 700px; }
+.demo { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+.demo h2 { margin-top: 0; font-size: 1.2rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.container { background: #ddd; border: 1px dashed #888; margin-bottom: 10px; overflow: auto; }
+.box { background: #f5a623; color: #222; font-weight: bold; padding: 10px; }
+
+/* ---------- A. Margin shorthand ---------- */
+.box-a {
+  /* TODO 1: 20px margin on all four sides */
+}
+
+.box-b {
+  /* TODO 2: 10px top/bottom, 40px left/right (two values) */
+}
+
+.box-c {
+  /* TODO 3: 0 top, 0 right, 30px bottom, 60px left (four values) */
+}
+
+/* ---------- B. Centering ---------- */
+.center {
+  text-align: center;
+  /* TODO 4: give it width: 300px, then center it with margin: 20px auto */
+}
+
+/* ---------- C. Margin collapse ---------- */
+.stack-1 {
+  /* TODO 5: margin-bottom: 30px */
+}
+
+.stack-2 {
+  /* TODO 6: margin-top: 20px — then measure the gap in DevTools */
+}
+
+/* ---------- D. Negative margin ---------- */
+.overlap {
+  background: #2f5d8c;
+  color: #fff;
+  /* TODO 7: margin-top: -20px and margin-left: 40px */
+}

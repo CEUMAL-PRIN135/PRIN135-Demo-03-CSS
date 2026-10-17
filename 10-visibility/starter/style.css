@@ -1,0 +1,41 @@
+/* ===== 10 · Visibility — STARTER =====
+   Complete each TODO, then save and refresh the browser. */
+
+/* ---------- Base (done for you) ---------- */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; background: #f2f2f2; color: #222; }
+h1 { margin-top: 0; color: #1e3a5f; }
+code { background: #e8e8e8; padding: 0 4px; }
+.intro { max-width: 700px; }
+.demo { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+.demo h2 { margin-top: 0; font-size: 1.2rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.label { margin: 14px 0 4px; font-size: 0.9rem; }
+.row { background: #eee; border: 1px dashed #999; padding: 6px; }
+.chip { display: inline-block; width: 50px; height: 50px; line-height: 50px; margin-right: 8px; text-align: center; background: #2f5d8c; color: #fff; text-decoration: none; border-radius: 50%; }
+.card { display: inline-block; position: relative; padding: 20px 30px; background: #f5a623; font-weight: bold; border-radius: 6px; cursor: pointer; }
+.tooltip { position: absolute; left: 0; top: 110%; width: 260px; padding: 8px; background: #222; color: #fff; font-weight: normal; font-size: 0.85rem; border-radius: 4px; }
+.tooltip code { background: #444; }
+
+/* ---------- A. Three ways to hide ---------- */
+.v-hidden {
+  /* TODO 1: hide chip 3 with visibility */
+}
+
+.o-zero {
+  /* TODO 2: hide chip 3 with opacity. Then hover where it was —
+             does the cursor still change? */
+}
+
+.d-none {
+  /* TODO 3: hide chip 3 with display */
+}
+
+/* ---------- B. Reveal on hover ---------- */
+.tooltip {
+  /* TODO 4: hide the tooltip with visibility */
+}
+
+.card:hover .tooltip {
+  /* TODO 5: show the tooltip again when the card is hovered */
+}

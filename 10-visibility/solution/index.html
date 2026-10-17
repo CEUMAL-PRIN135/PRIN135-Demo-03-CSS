@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10 · Visibility</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>10 · Visibility</h1>
+  <p class="intro">There is more than one way to hide an element. The difference is whether the element <strong>keeps its space</strong> in the layout.</p>
+
+  <!-- A. Three ways to hide -->
+  <section class="demo">
+    <h2>A. Three ways to hide chip 3</h2>
+
+    <p class="label">Normal</p>
+    <div class="row">
+      <span class="chip">1</span><span class="chip">2</span><span class="chip">3</span><span class="chip">4</span>
+    </div>
+
+    <p class="label"><code>visibility: hidden</code></p>
+    <div class="row">
+      <span class="chip">1</span><span class="chip">2</span><span class="chip v-hidden">3</span><span class="chip">4</span>
+    </div>
+
+    <p class="label"><code>opacity: 0</code></p>
+    <div class="row">
+      <span class="chip">1</span><span class="chip">2</span><a href="#" class="chip o-zero" title="I'm still clickable!">3</a><span class="chip">4</span>
+    </div>
+
+    <p class="label"><code>display: none</code></p>
+    <div class="row">
+      <span class="chip">1</span><span class="chip">2</span><span class="chip d-none">3</span><span class="chip">4</span>
+    </div>
+  </section>
+
+  <!-- B. Reveal on hover -->
+  <section class="demo">
+    <h2>B. Reveal on hover</h2>
+    <p class="hint">Hover over the card. The tooltip was there all along, just hidden.</p>
+    <div class="card">
+      Hover me
+      <span class="tooltip">Surprise! I was <code>visibility: hidden</code>.</span>
+    </div>
+  </section>
+</body>
+</html>

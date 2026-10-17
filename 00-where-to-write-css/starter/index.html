@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>00 · Where to Write CSS</title>
+
+  <!-- TODO 3 (EXTERNAL): link the external stylesheet here:
+       <link rel="stylesheet" href="styles.css">
+       Refresh: the whole page should suddenly get a header, cards and colours. -->
+
+  <!-- TODO 2 (INTERNAL): add a <style> tag here, BELOW the <link>.
+       Inside it, write a rule for .internal-box with:
+         padding: 16px;
+         border: 3px dashed #27ae60;
+         border-radius: 6px;
+         background: #eafaf1;
+         color: #1e6b3d;
+         font-weight: bold;
+  -->
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>00 · Where to Write CSS</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="demo">
+      <h2>1. Inline CSS</h2>
+      <p>Written in a <code>style</code> attribute, directly on one element.</p>
+      <!-- TODO 1 (INLINE): add a style attribute to the <p> below with:
+           padding: 16px; border: 3px dotted #c0392b; border-radius: 6px;
+           background: #fdecea; color: #922b21; font-weight: bold; -->
+      <p>
+        I'm styled with inline CSS. Only I get these styles.
+      </p>
+    </section>
+
+    <section class="demo">
+      <h2>2. Internal CSS</h2>
+      <p>Written inside a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code>. Works for every matching element on <em>this page only</em>.</p>
+      <p class="internal-box">I'm styled with internal CSS.</p>
+      <p class="internal-box">Me too: same class, same styles, written once.</p>
+    </section>
+
+    <section class="demo">
+      <h2>3. External CSS</h2>
+      <p>Written in a separate <code>styles.css</code> file and linked with <code>&lt;link&gt;</code>. Works on <em>every page that links it</em>.</p>
+      <p class="external-box">I'm styled with external CSS.</p>
+      <p>Visit the <a href="about.html">About page</a>: the header and this blue box look the same there, but the green internal box doesn't exist.</p>
+    </section>
+
+    <section class="demo">
+      <h2>4. Who wins?</h2>
+      <p>This box is styled in <strong>all three places</strong> with a different background colour:</p>
+      <ul>
+        <li><code>styles.css</code> → blue</li>
+        <li><code>&lt;style&gt;</code> → green</li>
+        <li><code>style=""</code> → orange</li>
+      </ul>
+      <!-- TODO 5: style this box in all three places:
+           a) styles.css already has .battle { background: #8cb6c0; } (blue)
+           b) in your <style> tag add:  .battle { background: #c3d08b; }  (green)
+           c) on this element add:      style="background: #f9cc9d;"     (orange)
+           Predict the colour BEFORE you refresh. Then delete the inline style and refresh again. -->
+      <p class="battle">What colour am I?</p>
+    </section>
+  </main>
+
+</body>
+</html>

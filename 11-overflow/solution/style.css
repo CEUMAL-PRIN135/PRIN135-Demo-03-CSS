@@ -1,0 +1,45 @@
+/* ===== 11 · Overflow — SOLUTION ===== */
+
+/* ---------- Base (done for you) ---------- */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; background: #f2f2f2; color: #222; }
+h1 { margin-top: 0; color: #1e3a5f; }
+code { background: #e8e8e8; padding: 0 4px; }
+.intro { max-width: 700px; }
+.demo { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+.demo h2 { margin-top: 0; font-size: 1.2rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.label { margin: 0 0 4px; font-size: 0.9rem; }
+.cell { display: inline-block; vertical-align: top; width: 240px; margin: 0 10px 60px 0; }
+.box { width: 220px; height: 120px; padding: 8px; border: 2px dashed #2f5d8c; background: #eef4fa; font-size: 0.9rem; }
+.code { width: 100%; padding: 12px; background: #1e1e1e; color: #9cdcfe; border-radius: 4px; }
+.title { width: 100%; max-width: 400px; padding: 8px; background: #fff8e1; border-left: 4px solid #f5a623; font-weight: bold; }
+
+/* ---------- A. The four values ---------- */
+.ov-visible {
+  overflow: visible;            /* default: content spills out */
+}
+
+.ov-hidden {
+  overflow: hidden;             /* extra content is clipped */
+}
+
+.ov-scroll {
+  overflow: scroll;             /* scrollbars always shown */
+}
+
+.ov-auto {
+  overflow: auto;               /* scrollbars only when needed */
+}
+
+/* ---------- B. Horizontal overflow ---------- */
+.code {
+  overflow-x: auto;             /* sideways scrolling only */
+}
+
+/* ---------- C. Ellipsis ---------- */
+.title {
+  white-space: nowrap;          /* 1. keep it on one line */
+  overflow: hidden;             /* 2. hide what doesn't fit */
+  text-overflow: ellipsis;      /* 3. show "…" at the cut */
+}

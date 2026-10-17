@@ -1,0 +1,109 @@
+/* ===== 05 · Box Model Explorer — sample page styles =====
+   Section A is deliberately left UNSTYLED so you can inspect
+   the browser's default margins and padding. */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #222;
+  /* body keeps the browser's default 8px margin: inspect it! */
+}
+
+section {
+  max-width: 720px;
+}
+
+/* ---------- Section B: styled elements ---------- */
+.styled {
+  border-top: 3px solid #1e3a5f;
+  margin-top: 40px;
+}
+
+.card {
+  padding: 20px;
+  border: 2px solid #2f5d8c;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  background: #f5f9fc;
+}
+
+.card-title {
+  margin: 0 0 8px;
+}
+
+.card-text {
+  margin: 0 0 12px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 18px;
+  margin-right: 8px;
+  background: #2f5d8c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.tag {
+  padding: 2px 8px;
+  border: 1px solid #c47f0e;
+  background: #fff3dc;
+  border-radius: 3px;
+}
+
+.note {
+  padding: 10px 14px 10px 24px;
+  border-left: 6px solid #f5a623;
+  background: #fff8e1;
+}
+
+.row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.col {
+  float: left;
+  width: 46%;
+  padding: 12px;
+  border: 1px dashed #888;
+}
+
+.col:first-child {
+  margin-right: 4%;
+}
+
+/* ---------- Section C: playground ---------- */
+.playground-section {
+  border-top: 3px solid #1e3a5f;
+  margin-top: 40px;
+  padding-bottom: 60px;
+}
+
+.controls label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.controls input[type="range"] {
+  vertical-align: middle;
+  width: 180px;
+}
+
+.pg-wrap {
+  display: inline-block;
+  background: #eee;
+  border: 1px dashed #999;
+}
+
+.pg-box {
+  width: 240px;
+  margin: 20px;
+  border: 4px solid #1e3a5f;
+  padding: 20px;
+  background: #fff;
+  text-align: center;
+  font-weight: bold;
+}

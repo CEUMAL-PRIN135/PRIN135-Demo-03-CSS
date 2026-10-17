@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11 · Overflow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>11 · Overflow</h1>
+  <p class="intro"><code>overflow</code> decides what happens when content is <strong>bigger than its box</strong>. Every box below is 220px wide and 120px tall, with the same text.</p>
+
+  <!-- A. The four values -->
+  <section class="demo">
+    <h2>A. The four values</h2>
+    <div class="grid">
+      <div class="cell">
+        <p class="label"><code>visible</code> (default)</p>
+        <div class="box ov-visible">
+          This box is only 120px tall, but this paragraph needs a lot more room than that. Where does the extra text go? It depends on the overflow value. Compare all four boxes, then try scrolling inside the ones that let you. The end!
+        </div>
+      </div>
+      <div class="cell">
+        <p class="label"><code>hidden</code></p>
+        <div class="box ov-hidden">
+          This box is only 120px tall, but this paragraph needs a lot more room than that. Where does the extra text go? It depends on the overflow value. Compare all four boxes, then try scrolling inside the ones that let you. The end!
+        </div>
+      </div>
+      <div class="cell">
+        <p class="label"><code>scroll</code></p>
+        <div class="box ov-scroll">
+          This box is only 120px tall, but this paragraph needs a lot more room than that. Where does the extra text go? It depends on the overflow value. Compare all four boxes, then try scrolling inside the ones that let you. The end!
+        </div>
+      </div>
+      <div class="cell">
+        <p class="label"><code>auto</code></p>
+        <div class="box ov-auto">
+          This box is only 120px tall, but this paragraph needs a lot more room than that. Where does the extra text go? It depends on the overflow value. Compare all four boxes, then try scrolling inside the ones that let you. The end!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- B. Horizontal overflow -->
+  <section class="demo">
+    <h2>B. Scrolling sideways only</h2>
+    <p class="hint">Long code lines don't wrap. Let the reader scroll sideways instead of breaking the page.</p>
+    <pre class="code">.a-very-long-selector-name &gt; .another-long-child-selector &gt; .yet-another-one { margin: 0 auto; padding: 10px 20px; }</pre>
+  </section>
+
+  <!-- C. Ellipsis -->
+  <section class="demo">
+    <h2>C. Cutting text with "…"</h2>
+    <p class="hint">Common for titles in lists and cards.</p>
+    <p class="title">How I learned the CSS box model in one afternoon, and why margin collapse surprised me the most</p>
+  </section>
+</body>
+</html>

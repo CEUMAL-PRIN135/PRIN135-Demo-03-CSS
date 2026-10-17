@@ -1,0 +1,113 @@
+/* ===== 02 · Specificity, Cascade & Inheritance — SOLUTION ===== */
+
+/* ---------- Base (done for you) ---------- */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; background: #f2f2f2; color: #222; }
+h1 { margin-top: 0; color: #1e3a5f; }
+code { background: #e8e8e8; padding: 0 4px; }
+.intro { max-width: 700px; }
+.demo { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+.demo h2 { margin-top: 0; font-size: 1.2rem; }
+.demo h3 { margin: 22px 0 8px; font-size: 1rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.family p { margin: 8px 0; }
+.order-box, .important-box, #target { padding: 12px; font-weight: bold; }
+.score { border-collapse: collapse; margin: 14px 0; font-size: 0.9rem; }
+.score th, .score td { border: 1px solid #ccc; padding: 4px 10px; text-align: center; }
+.calc input { width: 100%; padding: 8px; font: 1rem Consolas, Menlo, monospace; border: 2px solid #2f5d8c; border-radius: 4px; }
+.calc-out { display: flex; gap: 8px; margin: 10px 0; }
+.calc-out span { flex: 1; padding: 8px; background: #eef4fa; border-radius: 4px; font-size: 0.8rem; text-align: center; }
+.calc-out b { display: block; font-size: 1.8rem; color: #1e3a5f; }
+.calc-examples button { margin: 0 4px 6px 0; padding: 4px 8px; font: 0.8rem Consolas, Menlo, monospace; cursor: pointer; }
+.btn { display: inline-block; padding: 8px 16px; margin-right: 6px; color: #fff; text-decoration: none; border-radius: 4px; }
+#nav a { display: inline-block; padding: 6px 12px; margin-right: 4px; text-decoration: none; background: #eee; border-radius: 4px; }
+.panel { padding: 14px; border-radius: 6px; }
+
+/* =========================================================
+   GIVEN RULES — written by a "teammate". DO NOT EDIT these.
+   Your TODOs below have to compete with them.
+   ========================================================= */
+.order-box { background: #8cb6c0; }               /* blue */
+#stubborn { background: #8cb6c0; }                /* blue */
+.sidebar .btn { background: #888; }               /* Puzzle 1 */
+.btn-primary { background: #2f5d8c; }             /* Puzzle 1: loses! */
+#nav a { color: #c0392b; }                        /* Puzzle 2 */
+.active { color: #27ae60; font-weight: bold; }    /* Puzzle 2: colour loses! */
+.panel p { color: #333; }                         /* Puzzle 3 */
+.dark { background: #1e3a5f; color: #fff; }       /* Puzzle 3 */
+
+/* =========================================================
+   A. INHERITANCE
+   ========================================================= */
+
+/* 1. Set text AND box properties on the parent, then see which ones the children inherit */
+.family {
+  padding: 12px;
+  border: 2px solid #2f5d8c;
+  color: #2f5d8c;
+  font-style: italic;
+}
+
+/* 2. Links don't inherit colour by default (the browser styles them). Force it. */
+.family a {
+  color: inherit;
+}
+
+/* 3. border is NOT inherited, but the inherit keyword forces it */
+.child-box {
+  margin-top: 8px;
+  padding: 8px;
+  border: inherit;
+}
+
+/* =========================================================
+   B. THE CASCADE
+   ========================================================= */
+
+/* 4. Same selector as the given blue rule, but LATER in the file: this wins */
+.order-box {
+  background: #c3d08b;
+}
+
+/* 5. !important beats the ID rule AND the inline style */
+.important-box {
+  background: #f9cc9d !important;
+}
+
+/* =========================================================
+   C. SPECIFICITY  (keep these three in this order!)
+   ========================================================= */
+
+/* 6. ID: score 1-0-0 — written FIRST, still wins */
+#target {
+  background: #c3d08b;
+}
+
+/* 7. Two classes + one class: score 0-3-0 */
+.spec-demo .msg.note {
+  background: #fddd9b;
+}
+
+/* 8. Class + element: score 0-1-1 — written LAST, still loses */
+.spec-demo p {
+  background: #f1948a;
+}
+
+/* =========================================================
+   D. DEBUGGING PUZZLES  (no !important allowed)
+   ========================================================= */
+
+/* 9. Puzzle 1: .sidebar .btn (0-2-0) beats .btn-primary (0-1-0). Match it and come later. */
+.sidebar .btn-primary {
+  background: #2f5d8c;
+}
+
+/* 10. Puzzle 2: #nav a (1-0-1) beats .active (0-1-0). Include the ID. */
+#nav .active {
+  color: #27ae60;
+}
+
+/* 11. Puzzle 3: a direct rule (.panel p) ALWAYS beats an inherited value. Target the p itself. */
+.dark p {
+  color: inherit;
+}

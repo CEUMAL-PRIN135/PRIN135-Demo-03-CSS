@@ -1,0 +1,42 @@
+/* ===== 06 · Padding — SOLUTION ===== */
+
+/* ---------- Base (done for you) ---------- */
+body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; background: #f2f2f2; color: #222; }
+h1 { margin-top: 0; color: #1e3a5f; }
+code { background: #e8e8e8; padding: 0 4px; }
+.intro { max-width: 700px; }
+.demo { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+.demo h2 { margin-top: 0; font-size: 1.2rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.link-plain, .btn { background: #2f5d8c; color: #fff; text-decoration: none; border-radius: 4px; margin-right: 10px; }
+.pad { background: #8cb6c0; margin-bottom: 10px; }
+.pad span { display: block; background: #fff; }
+.size-box { width: 200px; padding: 20px; border: 5px solid #1e3a5f; background: #fddd9b; margin-bottom: 10px; }
+
+/* ---------- A. Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 24px;           /* top/bottom  left/right */
+}
+
+/* ---------- B. Shorthand ---------- */
+.pad-all {
+  padding: 20px;
+}
+
+.pad-two {
+  padding: 10px 50px;
+}
+
+.pad-left {
+  padding-left: 80px;           /* only one side */
+}
+
+/* ---------- C. box-sizing ---------- */
+.content-box {
+  box-sizing: content-box;      /* 200 + 20+20 + 5+5 = 250px */
+}
+
+.border-box {
+  box-sizing: border-box;       /* padding & border fit inside 200px */
+}

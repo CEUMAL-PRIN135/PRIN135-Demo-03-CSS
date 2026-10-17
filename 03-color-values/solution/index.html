@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>03 · Color Values</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>03 · Color Values</h1>
+  <p class="intro">Anywhere CSS takes a colour (<code>color</code>, <code>background</code>, <code>border-color</code>…) you can write it in several formats. They all describe the same thing: how much <strong>red</strong>, <strong>green</strong> and <strong>blue</strong> light to mix, plus an optional <strong>alpha</strong> (transparency).</p>
+
+  <!-- ===== A. Named colours ===== -->
+  <section class="demo">
+    <h2>A. Named colours</h2>
+    <p class="hint">About 140 colours have names. Easy to read, but you can't fine-tune them.</p>
+    <div class="swatch named-1"><code>tomato</code></div>
+    <div class="swatch named-2"><code>rebeccapurple</code></div>
+    <div class="swatch named-3"><code>gold</code> + <code>darkgoldenrod</code> border</div>
+  </section>
+
+  <!-- ===== B. Hexadecimal ===== -->
+  <section class="demo">
+    <h2>B. Hexadecimal <code>#RRGGBB</code></h2>
+    <p class="hint">Two hex digits (<code>00</code>–<code>ff</code>, which is 0–255) for each of red, green and blue. The most common format in real projects.</p>
+    <div class="swatch hex-1"><code>#2f5d8c</code></div>
+    <div class="swatch hex-2"><code>#f90</code> = <code>#ff9900</code></div>
+    <div class="swatch hex-3"><code>#000</code> / <code>#fff</code></div>
+  </section>
+
+  <!-- ===== C. RGB ===== -->
+  <section class="demo">
+    <h2>C. <code>rgb()</code></h2>
+    <p class="hint">The same three channels written as decimal numbers from 0 to 255. Mixing <em>light</em>, not paint.</p>
+    <div class="swatch rgb-1"><code>rgb(255, 0, 0)</code></div>
+    <div class="swatch rgb-2"><code>rgb(0 255 0)</code></div>
+    <div class="swatch rgb-3"><code>rgb(255 255 0)</code></div>
+    <div class="swatch rgb-4"><code>rgb(47 93 140)</code></div>
+  </section>
+
+  <!-- ===== D. HSL ===== -->
+  <section class="demo">
+    <h2>D. <code>hsl()</code>: hue, saturation, lightness</h2>
+    <p class="hint"><strong>Hue</strong> is an angle on the colour wheel (0–360). <strong>Saturation</strong> is how colourful (0% = grey). <strong>Lightness</strong> runs from 0% (black) to 100% (white). Great for making lighter and darker versions of one colour.</p>
+
+    <h3>Hue: change only the first number (done for you)</h3>
+    <div class="row">
+      <div class="chip hue-0">0</div><div class="chip hue-60">60</div><div class="chip hue-120">120</div><div class="chip hue-180">180</div><div class="chip hue-240">240</div><div class="chip hue-300">300</div>
+    </div>
+
+    <h3>Lightness: same hue, three shades</h3>
+    <div class="swatch shade-dark"><code>hsl(210 60% 25%)</code></div>
+    <div class="swatch shade-mid"><code>hsl(210 60% 50%)</code></div>
+    <div class="swatch shade-light"><code>hsl(210 60% 85%)</code></div>
+
+    <h3>Saturation: same hue and lightness</h3>
+    <div class="swatch shade-mid"><code>60% saturated</code></div>
+    <div class="swatch dull"><code>hsl(210 10% 50%)</code></div>
+  </section>
+
+  <!-- ===== E. Alpha ===== -->
+  <section class="demo">
+    <h2>E. Alpha: transparency</h2>
+    <p class="hint">Alpha goes from <code>0</code> (invisible) to <code>1</code> (solid). The stripes behind the boxes show how see-through each one is.</p>
+    <div class="stripes">
+      <div class="swatch solid"><code>solid #2f5d8c</code></div>
+      <div class="swatch alpha-hex"><code>#2f5d8c80</code></div>
+      <div class="swatch alpha-rgb"><code>rgb(47 93 140 / 0.5)</code></div>
+      <div class="swatch alpha-hsl"><code>hsl(210 50% 37% / 0.5)</code></div>
+    </div>
+
+    <h3><code>opacity</code> vs an alpha colour</h3>
+    <p class="hint">Both boxes are "50% see-through", but look at the text.</p>
+    <div class="stripes">
+      <div class="swatch fade-opacity">opacity: 0.5<br><small>the whole box, text too</small></div>
+      <div class="swatch fade-alpha">alpha background<br><small>only the background</small></div>
+    </div>
+  </section>
+
+  <!-- ===== F. Same colour, four ways ===== -->
+  <section class="demo">
+    <h2>F. One colour, four ways</h2>
+    <p class="hint">If you get these right, all four boxes look identical.</p>
+    <div class="swatch same-named"><code>steelblue</code></div>
+    <div class="swatch same-hex"><code>#4682b4</code></div>
+    <div class="swatch same-rgb"><code>rgb(70 130 180)</code></div>
+    <div class="swatch same-hsl"><code>hsl(207 44% 49%)</code></div>
+  </section>
+
+  <!-- ===== G. Colour picker ===== -->
+  <section class="demo">
+    <h2>G. Colour converter</h2>
+    <p class="hint">Pick any colour and alpha to see it written in every format.</p>
+    <div class="picker">
+      <label>Colour <input type="color" id="pick-color" value="#2f5d8c"></label>
+      <label>Alpha <input type="range" id="pick-alpha" min="0" max="100" value="100"> <output id="pick-alpha-out">1</output></label>
+      <div class="stripes picker-preview"><div id="pick-swatch"></div></div>
+      <table class="formats">
+        <tr><th>hex</th><td><code id="out-hex"></code></td></tr>
+        <tr><th>rgb</th><td><code id="out-rgb"></code></td></tr>
+        <tr><th>hsl</th><td><code id="out-hsl"></code></td></tr>
+      </table>
+    </div>
+  </section>
+
+  <script src="picker.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>05 · Box Model Explorer</title>
+  <link rel="stylesheet" href="page.css">
+  <link rel="stylesheet" href="explorer.css">
+</head>
+<body>
+
+  <!-- ===== Explorer UI (not part of the sample page) ===== -->
+  <div class="bm-toolbar" data-inspector>
+    <strong>05 · Box Model Explorer</strong>
+    <label><input type="checkbox" id="bm-hover" checked> Hover to inspect</label>
+    <label><input type="checkbox" id="bm-all"> Outline every box</label>
+    <span class="bm-all-legend">solid = block · dashed = inline · dotted = other</span>
+    <span class="bm-legend">
+      <i class="sw sw-margin"></i>margin
+      <i class="sw sw-border"></i>border
+      <i class="sw sw-padding"></i>padding
+      <i class="sw sw-content"></i>content
+    </span>
+  </div>
+
+  <aside class="bm-panel" data-inspector aria-live="polite">
+    <p class="bm-name" id="bm-name">Hover over anything on the page</p>
+    <p class="bm-sub" id="bm-sub">Click an element to pin it. Press <kbd>Esc</kbd> to unpin.</p>
+
+    <div class="bm-diagram">
+      <div class="bm-layer bm-margin">
+        <span class="bm-tag">margin</span>
+        <span class="t" id="m-t">–</span><span class="l" id="m-l">–</span><span class="r" id="m-r">–</span><span class="b" id="m-b">–</span>
+        <div class="bm-layer bm-border">
+          <span class="bm-tag">border</span>
+          <span class="t" id="b-t">–</span><span class="l" id="b-l">–</span><span class="r" id="b-r">–</span><span class="b" id="b-b">–</span>
+          <div class="bm-layer bm-padding">
+            <span class="bm-tag">padding</span>
+            <span class="t" id="p-t">–</span><span class="l" id="p-l">–</span><span class="r" id="p-r">–</span><span class="b" id="p-b">–</span>
+            <div class="bm-content" id="bm-content">– × –</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <dl class="bm-props">
+      <dt>display</dt><dd id="bm-display">–</dd>
+      <dt>position</dt><dd id="bm-position">–</dd>
+      <dt>box-sizing</dt><dd id="bm-sizing">–</dd>
+      <dt>rendered size</dt><dd id="bm-size">–</dd>
+    </dl>
+    <p class="bm-note" id="bm-note"></p>
+
+    <div class="bm-actions">
+      <button type="button" id="bm-parent">↑ Select parent</button>
+      <button type="button" id="bm-unpin">Unpin</button>
+    </div>
+  </aside>
+
+  <div id="bm-overlay" data-inspector aria-hidden="true"></div>
+
+  <!-- ===== Sample page: inspect anything below ===== -->
+  <main id="page">
+
+    <section>
+      <h1>A. Browser defaults</h1>
+      <p>Nothing in this section has any CSS from us. Every margin and padding you find here comes from the <strong>browser's built-in stylesheet</strong>. Inspect a few <em>inline</em> elements too, like this <a href="#">link</a>, this <code>code</code>, and this <span>span</span>.</p>
+
+      <h2>Headings and paragraphs</h2>
+      <p>Headings and paragraphs have top and bottom margins by default. Compare the gap between this paragraph and the heading above with the numbers in the panel.</p>
+      <h3>A smaller heading</h3>
+      <p>Notice that <code>h1</code>, <code>h2</code> and <code>h3</code> each have different default margins.</p>
+
+      <h2>Lists</h2>
+      <ul>
+        <li>Unordered list item</li>
+        <li>Lists have left <em>padding</em> to make room for the bullets</li>
+      </ul>
+      <ol>
+        <li>Ordered list item</li>
+        <li>Inspect the <code>ol</code> itself, not just the <code>li</code></li>
+      </ol>
+
+      <h2>Quotes, rules and figures</h2>
+      <blockquote>A blockquote is indented using margin, not padding. Check it!</blockquote>
+      <hr>
+      <figure>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='90'%3E%3Crect width='160' height='90' fill='%239bb7d4'/%3E%3Ctext x='80' y='52' font-family='Arial' font-size='18' fill='white' text-anchor='middle'%3Eimg%3C/text%3E%3C/svg%3E" width="160" height="90" alt="Placeholder image">
+        <figcaption>A <code>figure</code> with an <code>img</code> and a <code>figcaption</code></figcaption>
+      </figure>
+
+      <h2>Tables</h2>
+      <table border="1">
+        <tr><th>Layer</th><th>Inside or outside the border?</th></tr>
+        <tr><td>padding</td><td>inside</td></tr>
+        <tr><td>margin</td><td>outside</td></tr>
+      </table>
+
+      <h2>Forms</h2>
+      <form id="sample-form">
+        <fieldset>
+          <legend>Sign up</legend>
+          <p><label for="name">Name</label><br><input type="text" id="name" placeholder="Your name"></p>
+          <p><label for="level">Level</label><br>
+            <select id="level"><option>Beginner</option><option>Intermediate</option></select></p>
+          <p><label for="msg">Message</label><br><textarea id="msg" rows="3"></textarea></p>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="styled">
+      <h1>B. Styled elements</h1>
+      <p>These elements use classes from <code>page.css</code>. Compare their numbers with the defaults above.</p>
+
+      <div class="card">
+        <h3 class="card-title">A card</h3>
+        <p class="card-text">The card has <code>padding: 20px</code>, a <code>2px</code> border and a <code>16px</code> bottom margin. The heading and paragraph inside have their margins reduced.</p>
+        <a href="#" class="btn">Inline-block button</a>
+        <span class="tag">inline tag</span>
+      </div>
+
+      <p class="note">A note with a thick left border and asymmetric padding.</p>
+
+      <div class="row">
+        <div class="col">Floated column with <code>margin-right</code></div>
+        <div class="col">Floated column</div>
+      </div>
+    </section>
+
+    <section class="playground-section">
+      <h1>C. Playground</h1>
+      <p>Move the sliders. The box below is pinned automatically so you can watch its numbers change.</p>
+      <div class="controls" data-inspector>
+        <label>margin <input type="range" id="pg-margin" min="0" max="60" value="20"> <output id="pg-margin-out">20px</output></label>
+        <label>border <input type="range" id="pg-border" min="0" max="20" value="4"> <output id="pg-border-out">4px</output></label>
+        <label>padding <input type="range" id="pg-padding" min="0" max="60" value="20"> <output id="pg-padding-out">20px</output></label>
+        <label><input type="checkbox" id="pg-sizing"> <code>box-sizing: border-box</code></label>
+      </div>
+      <div class="pg-wrap">
+        <div class="pg-box" id="pg-box">width: 240px</div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="explorer.js"></script>
+</body>
+</html>

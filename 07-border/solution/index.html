@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07 · Border</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>07 · Border</h1>
+  <p class="intro">The border is the line <strong>between padding and margin</strong>. Every border has three parts: a <strong>width</strong>, a <strong>style</strong>, and a <strong>colour</strong>.</p>
+
+  <!-- A. Border styles -->
+  <section class="demo">
+    <h2>A. Border styles</h2>
+    <p class="hint">Every tile has <code>border-width: 6px</code> and <code>border-color: #2f5d8c</code>. Only <code>border-style</code> changes.</p>
+    <div class="tile solid">solid</div>
+    <div class="tile dashed">dashed</div>
+    <div class="tile dotted">dotted</div>
+    <div class="tile double">double</div>
+    <div class="tile groove">groove</div>
+    <div class="tile ridge">ridge</div>
+    <div class="tile inset">inset</div>
+    <div class="tile outset">outset</div>
+  </section>
+
+  <!-- B. Individual sides -->
+  <section class="demo">
+    <h2>B. One side at a time</h2>
+    <p class="hint">Borders don't have to go all the way around. A single side makes underlines and accent bars.</p>
+    <h3 class="underline">A heading with a bottom border</h3>
+    <p class="callout"><strong>Tip:</strong> A thick left border is a common way to highlight a note.</p>
+    <div class="mixed">Each side is different</div>
+  </section>
+
+  <!-- C. border-radius -->
+  <section class="demo">
+    <h2>C. Rounded corners with <code>border-radius</code></h2>
+    <p class="hint">Same square, different radius.</p>
+    <div class="shape r-small">8px</div>
+    <div class="shape r-large">30px</div>
+    <div class="shape r-circle">50%</div>
+    <div class="shape r-corner">one corner</div>
+    <a href="#" class="pill">Pill button</a>
+  </section>
+
+  <!-- D. Borders add size -->
+  <section class="demo">
+    <h2>D. Borders take up space</h2>
+    <p class="hint">Hover each button. The first one makes its neighbours jump. The second one doesn't.</p>
+    <div class="btn-row">
+      <a href="#" class="hover-btn jumpy">Jumpy</a>
+      <a href="#" class="hover-btn">Next</a>
+      <a href="#" class="hover-btn">Next</a>
+    </div>
+    <div class="btn-row">
+      <a href="#" class="hover-btn steady">Steady</a>
+      <a href="#" class="hover-btn">Next</a>
+      <a href="#" class="hover-btn">Next</a>
+    </div>
+  </section>
+
+  <!-- E. outline -->
+  <section class="demo">
+    <h2>E. <code>outline</code>: a border that takes no space</h2>
+    <p class="hint">Both boxes get a 10px line. The border pushes the box below down; the outline doesn't.</p>
+    <div class="line-box with-border">border: 10px</div>
+    <div class="line-box">neighbour</div>
+    <div class="line-box with-outline">outline: 10px</div>
+    <div class="line-box">neighbour</div>
+  </section>
+</body>
+</html>

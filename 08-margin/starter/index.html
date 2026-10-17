@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>08 · Margin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>08 · Margin</h1>
+  <p class="intro">Margin is the empty space <strong>outside</strong> an element's border. It pushes other elements away. It is always transparent.</p>
+
+  <!-- A. Margin shorthand -->
+  <section class="demo">
+    <h2>A. Margin shorthand</h2>
+    <p class="hint">Each orange box sits inside a grey container. The grey gap around the orange box is its margin.</p>
+    <div class="container"><div class="box box-a">margin: 20px</div></div>
+    <div class="container"><div class="box box-b">margin: 10px 40px</div></div>
+    <div class="container"><div class="box box-c">margin: 0 0 30px 60px</div></div>
+  </section>
+
+  <!-- B. Centering with auto -->
+  <section class="demo">
+    <h2>B. Centering with <code>auto</code></h2>
+    <p class="hint">A block with a fixed width and <code>margin: 0 auto</code> is centered horizontally.</p>
+    <div class="container"><div class="box center">I'm centered</div></div>
+  </section>
+
+  <!-- C. Margin collapse -->
+  <section class="demo">
+    <h2>C. Margin collapse</h2>
+    <p class="hint">Box 1 has <code>margin-bottom: 30px</code>. Box 2 has <code>margin-top: 20px</code>. Is the gap 50px or 30px?</p>
+    <div class="container">
+      <div class="box stack-1">Box 1</div>
+      <div class="box stack-2">Box 2</div>
+    </div>
+  </section>
+
+  <!-- D. Negative margin -->
+  <section class="demo">
+    <h2>D. Negative margin</h2>
+    <p class="hint">A negative margin pulls an element <em>toward</em> its neighbour, so they overlap.</p>
+    <div class="container">
+      <div class="box">Normal box</div>
+      <div class="box overlap">I'm pulled up</div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12 · Position</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>12 · Position</h1>
+  <p class="intro"><code>position</code> lets you move an element away from where it would normally sit, using <code>top</code>, <code>right</code>, <code>bottom</code> and <code>left</code>.</p>
+
+  <!-- A. static vs relative -->
+  <section class="demo">
+    <h2>A. <code>static</code> vs <code>relative</code></h2>
+    <p class="hint">Box 2 is nudged 30px down and 40px right. Notice the empty space it leaves behind.</p>
+    <div class="box">Box 1 (static)</div>
+    <div class="box nudge">Box 2 (relative)</div>
+    <div class="box">Box 3 (static)</div>
+  </section>
+
+  <!-- B. absolute inside relative -->
+  <section class="demo">
+    <h2>B. <code>absolute</code> inside a <code>relative</code> parent</h2>
+    <p class="hint">The badge is placed relative to the nearest positioned ancestor, the product card.</p>
+    <div class="product">
+      <span class="badge">SALE</span>
+      <div class="product-img">IMG</div>
+      <p class="product-name">Box Model T-Shirt</p>
+      <span class="corner-price">₱499</span>
+    </div>
+  </section>
+
+  <!-- C. z-index -->
+  <section class="demo">
+    <h2>C. Stacking with <code>z-index</code></h2>
+    <p class="hint">Higher <code>z-index</code> goes on top. It only works on positioned elements.</p>
+    <div class="stack">
+      <div class="layer layer-red">red</div>
+      <div class="layer layer-green">green</div>
+      <div class="layer layer-blue">blue</div>
+    </div>
+  </section>
+
+  <!-- D. sticky -->
+  <section class="demo">
+    <h2>D. <code>sticky</code></h2>
+    <p class="hint">Scroll inside the box. The heading scrolls normally, then sticks once it reaches the top.</p>
+    <div class="scroller">
+      <p>Scroll down ↓</p>
+      <h3 class="sticky-head">I'm a sticky heading</h3>
+      <p>Line 1</p><p>Line 2</p><p>Line 3</p><p>Line 4</p><p>Line 5</p>
+      <p>Line 6</p><p>Line 7</p><p>Line 8</p><p>Line 9</p><p>Line 10</p>
+    </div>
+  </section>
+
+  <!-- E. fixed -->
+  <section class="demo">
+    <h2>E. <code>fixed</code></h2>
+    <p class="hint">Look at the bottom-right corner of the window, then scroll the whole page. The button never moves.</p>
+  </section>
+
+  <a href="#" class="help-btn">? Help</a>
+</body>
+</html>

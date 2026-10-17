@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13 · Floats</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>13 · Floats</h1>
+  <p class="intro"><code>float</code> pushes an element to the left or right side of its container and lets text wrap around it, like a picture in a magazine.</p>
+
+  <!-- A. Text wrap -->
+  <section class="demo clearfix">
+    <h2>A. Wrapping text around an image</h2>
+    <div class="photo photo-left">LEFT</div>
+    <p>
+      This paragraph wraps around the box on the left. Floats were invented for exactly this:
+      letting text flow around an image. The image is taken out of the normal flow and pushed
+      to the side, and the lines of text shorten to make room for it. Once the text gets past
+      the bottom of the image, it goes back to using the full width of the container again.
+      Keep reading and you'll see the text return to full width right about now.
+    </p>
+    <div class="photo photo-right">RIGHT</div>
+    <p>
+      This one floats to the right instead. The margin on the floated box keeps the text from
+      touching it. Without that margin, the words would sit right against its edge, which is
+      much harder to read.
+    </p>
+  </section>
+
+  <!-- B. Collapsed parent -->
+  <section class="demo">
+    <h2>B. The collapsing parent</h2>
+    <p class="hint">The dashed box contains three floated tiles. Floats don't count toward the parent's height, so the parent collapses.</p>
+    <div class="gallery clearfix">
+      <div class="tile">1</div>
+      <div class="tile">2</div>
+      <div class="tile">3</div>
+    </div>
+    <p>I'm the paragraph after the gallery.</p>
+  </section>
+
+  <!-- C. Columns + clear -->
+  <section class="demo">
+    <h2>C. A two-column layout with <code>clear</code></h2>
+    <div class="layout">
+      <div class="col-main">Main content (65%)</div>
+      <div class="col-side">Sidebar (30%)</div>
+      <div class="footer">Footer — should sit below both columns</div>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,183 @@
+/* ===== 03 · Color Values — STARTER =====
+   The selectors are written for you. Each TODO describes a colour
+   in words: you write it in the format asked for.
+   The label inside each box shows what it should end up as. */
+
+/* ---------- Base (done for you) ---------- */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; background: #f2f2f2; color: #222; }
+h1 { margin-top: 0; color: #1e3a5f; }
+code { background: #e8e8e8; padding: 0 4px; }
+.intro { max-width: 700px; }
+.demo { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+.demo h2 { margin-top: 0; font-size: 1.2rem; }
+.demo h3 { margin: 22px 0 8px; font-size: 1rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.swatch code { background: rgba(255, 255, 255, 0.7); color: #222; font-size: 0.85em; border-radius: 3px; }
+.swatch { display: inline-block; vertical-align: top; width: 170px; min-height: 80px; margin: 0 8px 8px 0; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-weight: bold; font-size: 0.9rem; }
+.row { font-size: 0; }
+.chip { display: inline-block; width: 60px; height: 50px; line-height: 50px; text-align: center; color: #fff; font: bold 0.85rem/50px Arial, sans-serif; }
+.stripes { padding: 12px 12px 4px; border-radius: 6px; background: repeating-linear-gradient(45deg, #222 0 10px, #fff 10px 20px); }
+.fade-opacity, .fade-alpha { color: #fff; }
+.picker label { display: inline-block; margin: 0 16px 10px 0; }
+.picker input[type="range"] { vertical-align: middle; }
+.picker-preview { height: 90px; margin-bottom: 10px; padding: 12px; }
+#pick-swatch { height: 100%; border-radius: 4px; }
+.formats th { padding: 2px 12px 2px 0; text-align: left; color: #555; }
+.formats code { font-size: 1rem; background: #eee; }
+
+/* HSL hue row (done for you): only the hue changes */
+.hue-0   { background: hsl(0 70% 50%); }
+.hue-60  { background: hsl(60 70% 50%); }
+.hue-120 { background: hsl(120 70% 50%); }
+.hue-180 { background: hsl(180 70% 50%); }
+.hue-240 { background: hsl(240 70% 50%); }
+.hue-300 { background: hsl(300 70% 50%); }
+.shade-mid { background: hsl(210 60% 50%); color: #fff; }
+.solid { background: #2f5d8c; }
+
+/* =========================================================
+   A. NAMED COLOURS
+   ========================================================= */
+
+.named-1 {
+  /* TODO 1
+   background: the named colour tomato */
+}
+
+.named-2 {
+  /* TODO 2
+   background: the named colour rebeccapurple
+   text colour: the named colour white */
+}
+
+.named-3 {
+  /* TODO 3
+   background: the named colour gold
+   border: 4px solid, in the named colour darkgoldenrod */
+}
+
+/* =========================================================
+   B. HEXADECIMAL
+   ========================================================= */
+
+.hex-1 {
+  /* TODO 4
+   background: hex #2f5d8c
+   text colour: white as a 6-digit hex */
+}
+
+.hex-2 {
+  /* TODO 5
+   background: #ff9900 written as a 3-digit SHORTHAND hex
+   (each digit is doubled: #abc = #aabbcc) */
+}
+
+.hex-3 {
+  /* TODO 6
+   background: black as a 3-digit hex
+   text colour: white as a 3-digit hex */
+}
+
+/* =========================================================
+   C. RGB
+   ========================================================= */
+
+.rgb-1 {
+  /* TODO 7
+   background: pure red with rgb(), using the OLD comma syntax */
+}
+
+.rgb-2 {
+  /* TODO 8
+   background: pure green with rgb(), using the MODERN space syntax */
+}
+
+.rgb-3 {
+  /* TODO 9
+   background: full red + full green light (no blue) with rgb().
+   Predict the colour before you refresh! */
+}
+
+.rgb-4 {
+  /* TODO 10
+   background: red 47, green 93, blue 140 with rgb()
+   text colour: white with rgb()
+   (Compare with .hex-1: it's the same colour!) */
+}
+
+/* =========================================================
+   D. HSL
+   ========================================================= */
+
+.shade-dark {
+  /* TODO 11
+   background: hsl() with hue 210, saturation 60%, lightness 25%
+   text colour: #fff */
+}
+
+.shade-light {
+  /* TODO 12
+   background: same hue and saturation as .shade-dark, but lightness 85% */
+}
+
+.dull {
+  /* TODO 13
+   background: hue 210, lightness 50%, but saturation only 10%
+   text colour: #fff */
+}
+
+/* =========================================================
+   E. ALPHA
+   ========================================================= */
+
+.alpha-hex {
+  /* TODO 14
+   background: #2f5d8c with an alpha of about 50% as 8-digit hex
+   (alpha 50% = 128 = 80 in hex) */
+}
+
+.alpha-rgb {
+  /* TODO 15
+   background: rgb 47 93 140 at 0.5 alpha, using the slash syntax */
+}
+
+.alpha-hsl {
+  /* TODO 16
+   background: hue 210, saturation 50%, lightness 37% at 0.5 alpha with hsl() */
+}
+
+.fade-opacity {
+  /* TODO 17
+   background: solid #2f5d8c
+   then make the WHOLE box 50% see-through with opacity */
+}
+
+.fade-alpha {
+  /* TODO 18
+   background: rgb 47 93 140 at 0.5 alpha (no opacity property!) */
+}
+
+/* =========================================================
+   F. ONE COLOUR, FOUR WAYS
+   ========================================================= */
+
+.same-named {
+  /* TODO 19
+   background: the named colour steelblue */
+}
+
+.same-hex {
+  /* TODO 20
+   background: steelblue as a hex colour (it's on the label) */
+}
+
+.same-rgb {
+  /* TODO 21
+   background: steelblue with rgb() (red 70, green 130, blue 180) */
+}
+
+.same-hsl {
+  /* TODO 22
+   background: steelblue with hsl() (hue 207, saturation 44%, lightness 49%) */
+}

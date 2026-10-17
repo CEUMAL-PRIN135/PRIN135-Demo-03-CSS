@@ -1,0 +1,142 @@
+/* ===== 04 · Typography — STARTER =====
+   The selectors are written for you. Each TODO describes what to write.
+   TODO 5 is in index.html, not in this file. */
+
+/* ---------- Base (done for you) ---------- */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 20px; font-family: Arial, Helvetica, sans-serif; line-height: 1.5; background: #f2f2f2; color: #222; }
+h1 { margin-top: 0; color: #1e3a5f; }
+code { background: #e8e8e8; padding: 0 4px; }
+.intro { max-width: 700px; }
+.demo { background: #fff; border: 1px solid #ccc; border-radius: 6px; padding: 20px; margin-bottom: 20px; }
+.demo h2 { margin-top: 0; font-size: 1.2rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.sample { padding: 12px 14px; margin-bottom: 8px; border: 1px solid #ddd; border-radius: 6px; font-size: 1.15rem; }
+.sample > code { display: block; width: fit-content; margin-bottom: 4px; font-size: 0.8rem; }
+.sample p { margin: 6px 0; }
+.font-status { display: inline-block; vertical-align: middle; padding: 2px 8px; border-radius: 10px; font: bold 0.7rem Arial, sans-serif; }
+.font-status.is-ok { background: #d5f5e3; color: #1e6b3d; }
+.font-status.is-missing { background: #fdecea; color: #922b21; }
+.article { max-width: 620px; padding: 20px 24px; border: 1px solid #ddd; border-radius: 6px; }
+.article h3, .article .kicker, .article .byline { margin: 0 0 6px; }
+.pull-quote { margin: 20px 0; padding: 14px; border-top: 2px solid #ddd; border-bottom: 2px solid #ddd; }
+
+/* Done for you: two more web-safe stacks to copy the pattern from */
+.ws-trebuchet { font-family: "Trebuchet MS", sans-serif; }
+.ws-times { font-family: "Times New Roman", Times, serif; }
+
+/* =========================================================
+   A. WEB-SAFE FONTS
+   ========================================================= */
+
+.ws-arial {
+  /* TODO 1
+   font-family: Arial, then Helvetica, then the generic sans-serif fallback */
+}
+
+.ws-verdana {
+  /* TODO 2
+   font-family: Verdana, then Geneva, then sans-serif */
+}
+
+.ws-georgia {
+  /* TODO 3
+   font-family: Georgia, then "Times New Roman", then serif
+   (Font names with spaces need quotes!) */
+}
+
+.ws-courier {
+  /* TODO 4
+   font-family: "Courier New", then Courier, then monospace */
+}
+
+/* =========================================================
+   B. GOOGLE FONTS  (the <link> tag is in index.html)
+   ========================================================= */
+
+.gf-heading {
+  /* TODO 6
+   Do TODO 5 in index.html first!
+   font-family: "Playfair Display", falling back to Georgia, then serif
+   font-size: 2rem
+   font-weight: 700 (bold) */
+}
+
+.gf-body {
+  /* TODO 7
+   font-family: "Roboto", falling back to Arial, then sans-serif
+   font-weight: 300 (light) */
+}
+
+/* =========================================================
+   C. UPLOADED FONTS
+   ========================================================= */
+
+/* TODO 8 · @font-face
+   Tell the browser about the font file in the fonts/ folder.
+   Write an @font-face block (it has no selector) with:
+     font-family: "Pacifico";          <- the name YOU choose to use later
+     src: url("fonts/pacifico-latin-400-normal.woff2") format("woff2"),
+          url("fonts/pacifico-latin-400-normal.woff") format("woff");
+     font-weight: 400;
+     font-style: normal;
+     font-display: swap;               <- show fallback text while it loads
+*/
+
+.custom {
+  /* TODO 9
+   Do TODO 8 first!
+   font-family: the "Pacifico" family you defined, falling back to cursive
+   font-size: 2rem
+   color: #2f5d8c */
+}
+
+/* =========================================================
+   D. STYLING THE TEXT
+   ========================================================= */
+
+.article {
+  /* TODO 10
+   font-family: Georgia, "Times New Roman", serif
+   font-size: 1.125rem (18px if the root is 16px)
+   line-height: 1.7 (no unit: 1.7 × the font size) */
+}
+
+.article h3 {
+  /* TODO 11
+   font-family: "Playfair Display", Georgia, serif
+   font-size: 2rem
+   line-height: 1.2 (headings need less than body text) */
+}
+
+.kicker {
+  /* TODO 12
+   font-family: Arial, Helvetica, sans-serif
+   font-size: 0.8rem
+   font-weight: 700
+   text-transform: uppercase
+   letter-spacing: 0.15em
+   color: #c0392b */
+}
+
+.byline {
+  /* TODO 13
+   font-size: 0.9rem
+   font-style: italic
+   color: #666 */
+}
+
+.pull-quote {
+  /* TODO 14
+   font-size: 1.4rem
+   font-style: italic
+   text-align: center */
+}
+
+.article a {
+  /* TODO 15
+   color: inherit
+   text-decoration: underline, coloured #f5a623, 3px thick
+   (text-decoration-color, text-decoration-thickness)
+   text-underline-offset: 4px */
+}

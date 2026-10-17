@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01 · Selectors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>01 · Selectors</h1>
+  <p class="intro">A <strong>selector</strong> is the part of a CSS rule that decides <em>which elements</em> get styled. Pick the right selector and you never need to add a class to every element.</p>
+
+  <!-- ===== A. Basic selectors ===== -->
+  <section class="demo">
+    <h2>A. Basic selectors</h2>
+
+    <h3>Element <code>p</code> · Class <code>.highlight</code> · ID <code>#special</code></h3>
+    <p>A plain paragraph.</p>
+    <p class="highlight">A paragraph with <code>class="highlight"</code>.</p>
+    <p>Another plain paragraph.</p>
+    <p class="highlight">Another <code>.highlight</code>: classes can be reused.</p>
+    <p id="special">The one paragraph with <code>id="special"</code>. An ID must be unique on the page.</p>
+
+    <h3>Attribute <code>[type="email"]</code> and <code>[href^="https"]</code></h3>
+    <form class="mini-form">
+      <input type="text" placeholder="type=&quot;text&quot;">
+      <input type="email" placeholder="type=&quot;email&quot;">
+      <input type="password" placeholder="type=&quot;password&quot;">
+    </form>
+    <ul class="links">
+      <li><a href="https://developer.mozilla.org">https://developer.mozilla.org</a></li>
+      <li><a href="http://example.com">http://example.com</a></li>
+      <li><a href="mailto:teacher@example.com">mailto:teacher@example.com</a></li>
+    </ul>
+
+    <h4>Grouping <code>h3, h4</code></h4>
+    <p>One rule, two selectors, separated by a comma.</p>
+  </section>
+
+  <!-- ===== B. Combinators ===== -->
+  <section class="demo">
+    <h2>B. Combinators</h2>
+
+    <h3>Descendant <code>.menu a</code> vs child <code>.menu &gt; li</code></h3>
+    <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Products</a>
+        <ul>
+          <li><a href="#">Shirts (nested)</a></li>
+          <li><a href="#">Hats (nested)</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <h3>Adjacent sibling <code>.anchor + p</code> vs general sibling <code>.anchor ~ p</code></h3>
+    <div class="siblings">
+      <p>Paragraph BEFORE the heading</p>
+      <h4 class="anchor">The heading (.anchor)</h4>
+      <p>1st paragraph after</p>
+      <p>2nd paragraph after</p>
+      <p>3rd paragraph after</p>
+    </div>
+  </section>
+
+  <!-- ===== C. Pseudo-classes ===== -->
+  <section class="demo">
+    <h2>C. Pseudo-classes</h2>
+    <p class="hint">A pseudo-class selects an element in a certain <strong>state</strong> or <strong>position</strong>. It starts with one colon <code>:</code>.</p>
+
+    <h3>User action <code>:hover</code> and <code>:focus</code></h3>
+    <button type="button" class="btn">Hover me</button>
+    <button type="button" class="btn">Hover me too</button>
+    <input type="text" class="field" placeholder="Click into me">
+
+    <h3>Position <code>:first-child</code>, <code>:nth-child(even)</code>, <code>:last-child</code></h3>
+    <ol class="ranks">
+      <li>Gold</li>
+      <li>Silver</li>
+      <li>Bronze</li>
+      <li>4th place</li>
+      <li>5th place</li>
+      <li>Last place</li>
+    </ol>
+
+    <h3>Negation <code>:not(.featured)</code></h3>
+    <div class="tags">
+      <span>HTML</span><span class="featured">CSS</span><span>JavaScript</span><span>Python</span>
+    </div>
+
+    <h3>Form state <code>:checked</code> and <code>:disabled</code></h3>
+    <div class="todo">
+      <p><input type="checkbox" id="t1" checked><label for="t1">Learn selectors</label></p>
+      <p><input type="checkbox" id="t2"><label for="t2">Learn the box model</label></p>
+      <p><input type="checkbox" id="t3"><label for="t3">Build a page</label></p>
+    </div>
+    <button type="button" class="btn" disabled>Disabled button</button>
+  </section>
+
+  <!-- ===== D. Pseudo-elements ===== -->
+  <section class="demo">
+    <h2>D. Pseudo-elements</h2>
+    <p class="hint">A pseudo-element styles a <strong>part</strong> of an element, or adds content that isn't in the HTML. It starts with two colons <code>::</code>.</p>
+
+    <h3><code>::before</code> and <code>::after</code></h3>
+    <p class="tip">Use DevTools to find the hidden pseudo-elements.</p>
+    <ul class="products">
+      <li>Box Model T-Shirt</li>
+      <li class="new">Selector Mug</li>
+      <li>Flexbox Hoodie</li>
+    </ul>
+
+    <h3><code>::first-letter</code>, <code>::first-line</code> and <code>::selection</code></h3>
+    <p class="story">Once upon a time, a web developer wrote the same style on every single paragraph. Then they discovered selectors, and wrote it once instead. The first letter of this story is a drop cap, the first line is bold, and if you highlight any of this text with your mouse, the selection colour is orange. None of that is in the HTML: it's all pseudo-elements.</p>
+
+    <h3><code>::placeholder</code></h3>
+    <input type="text" class="field" placeholder="I'm placeholder text">
+  </section>
+</body>
+</html>
